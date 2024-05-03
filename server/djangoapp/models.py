@@ -43,10 +43,10 @@ class CarModel(models.Model):
         ('VAN', 'Van'),
     ]
     type = models.CharField(max_length=100,
-                           choices=CHOICE_TYPE, default='SEDAN')
+                               choices=CHOICE_TYPE, default='SEDAN')
     year = models.IntegerField(default=2023,
-                           validators=[MaxValueValidator(2023),
-                           MinValueValidator(2015)])
+                               validators=[MaxValueValidator(2023),
+                               MinValueValidator(2015)])
     electric = models.BooleanField(default=False)
     used = models.BooleanField(default=False)
     miles = models.IntegerField(default=0, blank=True)
