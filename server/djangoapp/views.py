@@ -1,13 +1,8 @@
 # Uncomment the required imports before adding the code
 
 from django.shortcuts import render
-from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth import logout
-from django.contrib import messages
-from datetime import datetime
-
 from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
 import logging
@@ -99,7 +94,7 @@ def registration(request):
 
 # # Update the `get_dealerships` view to render the index page with
 # a list of dealerships
-# Update the `get_dealerships` render list of dealerships all by default, 
+# Update the `get_dealerships` render list of dealerships all by default,
 # particular state if state is passed
 
 def get_dealerships(request, state="All"):
@@ -144,7 +139,7 @@ def add_review(request):
             post_review(data)
             return JsonResponse({'status': 200})
         except Exception as e:
-            print (f"Error: {e}")
+            print(f"Error: {e}")
             return JsonResponse({'status': 401,
                                  'message': 'Error in posting review'})
     else:
